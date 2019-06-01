@@ -5,7 +5,7 @@ const stripJsonComments = require('strip-json-comments')
 function ResolveTSPathsToAlias(options) {
 
   const context = options.context
-  const json = fs.readFileSync(options.configFile, 'utf8')
+  const json = fs.readFileSync(options.tsconfig, 'utf8')
   const tsconfig = stripJsonComments(json)
   const { paths } = JSON.parse(tsconfig).compilerOptions
 
